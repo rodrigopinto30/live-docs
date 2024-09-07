@@ -13,7 +13,9 @@ const Home = async () => {
   if(!clerkUser) redirect('/sign-in');
 
   const documents = [];
-
+  
+  // 1:37:00
+  
   return (
     <main className='home-container'>
       <Header className='sticky left-0 top-0'>
