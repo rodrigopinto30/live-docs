@@ -13,6 +13,7 @@ import React from 'react'
 const Home = async () => {
 
   const clerkUser = await currentUser();
+  
   if (!clerkUser) redirect('/sign-in');
 
   const roomDocuments = await getDocuments(clerkUser.emailAddresses[0].emailAddress);
@@ -28,7 +29,7 @@ const Home = async () => {
         </div>
       </Header>
 
-      {roomDocuments.data.length > 0 ? (
+      {roomDocuments && roomDocuments.data.length > 0 ? (
         <div className='document-list-container'>
           <div className="document-list-title">
             <h3 className='text-28-semibold'>All documents</h3>
