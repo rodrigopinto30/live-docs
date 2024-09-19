@@ -58,6 +58,7 @@ const Home = async () => {
                     <p className='text-sm font-light text-blue-100'>Created about {dateConverter(createdAt)}</p>
                   </div>
                 </Link>
+                {/* TODO delete modal */}
               </li>
             ))}
           </ul>
