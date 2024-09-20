@@ -4,6 +4,8 @@ import { nanoid } from 'nanoid';
 import { liveblocks } from '../liveblocks';
 import { revalidatePath } from 'next/cache';
 import { getAccessType, parseStringify } from '../utils';
+import { redirect } from 'next/navigation';
+//3.14.37
 
 export const createDocument = async ({ userId, email }: CreateDocumentParams) => {
     const roomId = nanoid();
@@ -83,7 +85,21 @@ export const updateDocumentAccess = async ({roomId, email, userType, updatedBy} 
         })
 
         if(room){
+            const notificationId = nanoid();
 
+            await liveblocks.triggerInboxNotification({
+                userId: email,
+                kind: '$docuementAccess',
+                subjectId: notificationId,
+                activityData: {
+                    userType,
+                    title: `You have been granted ${userType} access to the document by ${updatedBy.name}`,
+                    updatedBy: updatedBy.name,
+                    avatar: updatedBy.avatar,
+                    email: updatedBy.email
+                },
+                roomId
+            })
         }
 
         revalidatePath(`/documents/${roomId}`);
@@ -114,5 +130,17 @@ export const removeCollaborator = async ({roomId, email}: {roomId:string, email:
 
     } catch (error) {
         console.log(`Error happened while removing a collaborator: ${error}`);
+    }
+}
+
+export const deleteDocument = async (roomId: string)=>{
+    
+    try {
+        await liveblocks.deleteRoom(roomId);
+        revalidatePath('/');
+        redirect('/');
+        
+    } catch (error) {
+        console.log(`Error happened while deleting a room: ${error}`);
     }
 }
