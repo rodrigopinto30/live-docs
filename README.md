@@ -1,36 +1,21 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Live Docs
 
-## Getting Started
+Live Docs is a platform designed to help users create, edit, share, and delete online documents, similar to Google Docs. It enables seamless real-time collaboration, ensuring that users can work together efficiently on the same document.
 
-First, run the development server:
+## Technologies
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+### 1. Next.js
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Next.js is a powerful frontend framework that simplifies the process of building user interfaces. It provides features like server-side rendering and static site generation, making web applications fast and efficient.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+### 2. Tailwind CSS
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+Tailwind CSS is a utility-first CSS framework that allows developers to design responsive and highly customizable user interfaces directly in their markup. It speeds up the styling process and reduces the need for custom CSS.
 
-## Learn More
+### 3. Liveblocks
 
-To learn more about Next.js, take a look at the following resources:
+Liveblocks provides real-time collaboration features to make online documents interactive and dynamic. It ensures that multiple users can work on the same document simultaneously, with live updates and synchronization.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+### 4. ShadCN
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+ShadCN is a library that integrates components and styles to enhance the UI, providing pre-built solutions that can be customized for consistency across the platform.
